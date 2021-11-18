@@ -1,6 +1,7 @@
 package org.zenika.com.sample.services;
 
 import java.util.Objects;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,9 @@ public class UserServices {
 	private UserRepository userRepository;
 
 	public User createUser(final User user) {
-		return userRepository.save(user);
+		final String id = UUID.randomUUID().toString();
+		user.setId(id);
+		return userRepository.save(id, user);
 	}
 
 	public User getUserById(final String id) {
@@ -27,7 +30,7 @@ public class UserServices {
 			foundUser.setAge(user.getAge());
 			foundUser.setFirstName(user.getFirstName());
 			foundUser.setAge(user.getAge());
-			return userRepository.save(user);
+			return userRepository.save(id, user);
 		}
 		return null;
 	}

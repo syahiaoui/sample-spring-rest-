@@ -1,7 +1,6 @@
 package org.zenika.com.sample.repository;
 
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.stereotype.Repository;
@@ -15,18 +14,16 @@ public class UserRepository {
 		userRecords = new ConcurrentHashMap<>();
 	}
 
-	public User save(User user) {
-		final String id = UUID.randomUUID().toString();
-		user.setId(id);
+	public User save(final String id, final User user) {
 		userRecords.put(id, user);
 		return user;
 	}
 
-	public User findById(String id) {
+	public User findById(final String id) {
 		return userRecords.get(id);
 	}
 
-	public void deleteById(String id) {
+	public void deleteById(final String id) {
 		userRecords.remove(id);
 	}
 }
