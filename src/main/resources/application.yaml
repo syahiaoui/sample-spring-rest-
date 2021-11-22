@@ -1,10 +1,13 @@
 server:
   port: ${PORT:8080}
-  servlet:
-    context-path: /api
 
 logging:
   level:
     org:
       zalando:
           logbook: TRACE
+
+stripe:
+  key:
+   secret: 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
+   public: pk_live_51Jya0xKnk3jr9AAzuimxhleCDd4JFu7LjO0msmhMJqv7yRsAruGKCYiY5WqyV779sU2PlOmLS3BFSWCxFUXODfew00jFlJvmwK

@@ -15,7 +15,7 @@ import org.zenika.com.sample.model.User;
 import org.zenika.com.sample.services.UserServices;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/api/v1")
 public class UserController {
 
 	@Autowired
